@@ -9,9 +9,9 @@ parameters {
     choice choices: ['dev', 'prod'], name: 'select_environment'
 }
 
-environment{
+/*environment{
     NAME = "piyush"
-}
+}*/
 tools {
   maven 'mymaven'
 }
