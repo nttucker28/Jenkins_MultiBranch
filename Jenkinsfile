@@ -72,12 +72,12 @@ stages{
         agent { label 'DevServer' }
         steps
         {
-            dir("/var/www/html")
+            dir("/Users/nathantucker/.jenkins/www/html/")
             {
                 unstash "maven-build"
             }
             sh """
-            cd /var/www/html/
+            cd /Users/nathantucker/.jenkins/www/html/
             jar -xvf webapp.war
             """
         }
@@ -93,12 +93,12 @@ stages{
              timeout(time:5, unit:'DAYS'){
                 input message: 'Deployment approved?'
              }
-            dir("/var/www/html")
+            dir("/Users/nathantucker/.jenkins/www/html/")
             {
                 unstash "maven-build"
             }
             sh """
-            cd /var/www/html/
+            cd /Users/nathantucker/.jenkins/www/html/
             jar -xvf webapp.war
             """
         }  
